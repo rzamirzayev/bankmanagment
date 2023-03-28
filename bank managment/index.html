@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets//css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="js/index.js" type="module" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Header start -->
+    <header>
+      <div id="header" class="d-flex justify-content-between">
+        <div class="navbar">
+          <button href="index.html" id="mainmenu" class="font-weight-bold">
+            Rza Bank
+          </button>
+        </div>
+        <div class="button">
+          <button id="addNewWorkers" class="btn btn-success">Yeni Işçi</button>
+          <button id="editWorkers" class="btn btn-primary">Edit</button>
+          <button id="delete" class="btn btn-info btn-warning">Silmək</button>
+        </div>
+      </div>
+    </header>
+    <!-- Header end -->
+    <main>
+      <!-- searchin section start -->
+      <section id="searching">
+        <div class="container">
+          <div class="row d-flex flex-wrap">
+            <div class="col-3 mt-2">
+              <select id="inputWorkerType" class="form-control rounded-lg">
+                <option selected disabled value="">Işçi</option>
+                <option value="developer">Developer</option>
+                <option value="tester">Tester</option>
+                <option value="productOwner">Product Owner</option>
+              </select>
+            </div>
+            <div class="col-3 mt-2">
+              <div class="searchingNameAndSurname searchingName">
+                <label for="searchName"></label>
+                <input
+                  type="text"
+                  id="searchName"
+                  required
+                  minlength="3"
+                  maxlength="10"
+                />
+                <span class="focus">Ad</span>
+              </div>
+              <div class="searchingNameAndSurname searchingSurname">
+                <label for="searchSurname"></label>
+                <input
+                  type="text"
+                  id="searchSurname"
+                  minlength="3"
+                  maxlength="10"
+                  required
+                />
+                <span class="focus">Soyad</span>
+              </div>
+            </div>
+
+            <div class="col-3 mt-2 d-flex">
+              <div class="filtreSalary filtee-min">
+                <label for="minPrice"></label>
+                <input
+                  type="text"
+                  id="minPrice"
+                  required
+                  minlength="1"
+                  min="0"
+                  maxlength="5"
+                />
+                <span class="focus">min</span>
+                <i
+                  id="iconMin"
+                  class="fa-sharp fa-solid fa-circle-xmark display-none"
+                ></i>
+              </div>
+              <div class="filtrePrice filtre-max">
+                <label for="maxPrice"></label>
+                <input
+                  type="text"
+                  id="maxPrice"
+                  required
+                  minlength="1"
+                  maxlength="5"
+                  min="0"
+                />
+                <span class="focus">Max</span>
+                <i
+                  id="iconMax"
+                  class="fa-sharp fa-solid fa-circle-xmark display-none"
+                ></i>
+              </div>
+            </div>
+            <div class="col-12 mt-3 d-flex justify-content-between">
+              <!-- <span>Filtre</span> -->
+
+              <button id="showallbutton" type="button" class="btn btn-warning">
+                Reset
+              </button>
+              <button id="showButton" type="button" class="btn btn-danger">
+                Goster
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- searching section end -->
+      <section id="workerList">
+        <div class="container">
+          <div class="section-info row my-3">
+            <span id="section-name" class="font-weight-bold">İşçilər</span>
+          </div>
+          <div id="workers" class="row d-flex flex-wrap"></div>
+        </div>
+      </section>
+      <!-- add new worker -->
+      <section id="register" class="mb-5">
+        <div class="container">
+          <div class="row d-flex flex-wrap">
+            <h4 class="tittle d-flex align-items-center">Yeni Isci</h4>
+          </div>
+        </div>
+        <div class="row form-register">
+          <div>
+            <form>
+              <table>
+                <tr>
+                  <td>
+                    <label for="type" class="types ml-4 mb-4 pr-5 pt-3"
+                      >Iscinin tipi</label
+                    >
+                  </td>
+                  <td>
+                    <select id="types" class="ml-5">
+                      <option selected disabled value="">Tip</option>
+                      <option value="Developer">Developer</option>
+                      <option value="productOwner">ProductOwner</option>
+                      <option value="tester">Tester</option>
+                    </select>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label
+                      for="namesurname"
+                      class="identity ml-4 mb-4 pr-5 pt-3"
+                      >Identity</label
+                    >
+                  </td>
+                  <td class="d-flex">
+                    <input
+                      type="text"
+                      id="addWorkerName"
+                      class="ml-5"
+                      placeholder="Ad"
+                    />
+                    <input
+                      type="text"
+                      id="addWorkerSurname"
+                      class="ml-5"
+                      placeholder="Soyad"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="salary" class="salary ml-4 mb-4 pr-5 pt-3">
+                      Maas
+                    </label>
+                  </td>
+                  <td>
+                    <input
+                      id="addworkerSalary"
+                      placeholder="maas"
+                      class="ml-5"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="image" class="img ml-4 pr-5 pt-3">Sekil</label>
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      class="ml-5"
+                      id="addWorkerImage"
+                      placeholder="sekil url"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button id="addNewWorker" type="submit">Gonder</button>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- add new worker end -->
+      <!-- delete start -->
+      <section id="deleteWorker">
+        <form>
+          <div class="form-work">
+            <label for="deleteid">Iscinin id daxil edin</label>
+            <input
+              type="number"
+              class="form-control"
+              id="deleteid"
+              aria-describedby="deleteid"
+            />
+          </div>
+          <div class="delete-button">
+            <button id="deleteBtn" class="btn btn-primary">Silmek</button>
+            <button id="deleteAfterMain" class="btn btn-warning">
+              Esas Sehife
+            </button>
+          </div>
+        </form>
+      </section>
+      <!-- delete end -->
+      <section id="editWorker">
+        <form>
+          <div class="edit-work">
+            <label for="editid">Iscinin id daxil edin</label>
+            <input
+              type="number"
+              class="form-control"
+              id="editid"
+              aria-describedby="editid"
+            />
+          </div>
+          <div>
+            <label for="editname">Iscinin adini daxil edin:</label>
+            <input type="text" id="editname" />
+          </div>
+          <div>
+            <label for="editsurname">Iscinin soyadini daxil edin:</label>
+            <input type="text" id="editsurname" />
+          </div>
+          <div>
+            <label for="editsalary">Iscinin maasini daxil edin:</label>
+            <input type="number" id="editsalary" />
+          </div>
+          <div>
+            <select id="edittypes" class="ml-5">
+              <option selected disabled value="">Tip</option>
+              <option value="Developer">Developer</option>
+              <option value="productOwner">ProductOwner</option>
+              <option value="tester">Tester</option>
+            </select>
+          </div>
+
+          <div class="edit-button">
+            <button id="editBtn" type="submit">Edit</button>
+            <button id="editAfterMain" class="btn btn-warning">
+              Esas Sehife
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

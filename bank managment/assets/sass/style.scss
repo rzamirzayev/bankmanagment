@@ -1,0 +1,158 @@
+$color_1: white;
+$color_2: #8d94ad;
+$font-family_1: Arial, Helvetica, sans-serif;
+$background-color_1: rgb(122, 122, 179);
+$background-color_2: #f6f7fa;
+$background-color_3: white;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+header {
+	background-color: $background-color_1;
+	#header {
+		height: 60px;
+		width: 1080px !important;
+		margin: 0 auto;
+		padding-right: 25px !important;
+		.navbar {
+			>a {
+				color: $color_1;
+				text-decoration: none;
+				margin: 0 7px;
+				font-size: 20px;
+				letter-spacing: -0.4;
+			}
+		}
+		.button {
+			margin-top: 7px;
+			button {
+				font-size: 20px;
+			}
+		}
+	}
+}
+main {
+	width: 1080px !important;
+	background-color: $background-color_2;
+	margin: 0 auto;
+}
+#workerList {
+	.section-info {
+		#section-name {
+			margin-left: 20px;
+			margin-top: 12px;
+		}
+	}
+	.col-3 {
+		flex: 0 0 25%;
+		max-width: 22%;
+		border-radius: 10px;
+		margin: 5px 15px;
+		padding: 0 !important;
+		overflow: hidden;
+		&:hover {
+			box-shadow: 0 0 20px rgba(33, 33, 33, 0.2);
+			border-radius: 10px;
+		}
+		img {
+			width: 100%;
+			height: 170px;
+		}
+		.workerType {
+			font-size: 20px;
+		}
+		.info {
+			background-color: $background-color_3;
+		}
+	}
+}
+.filtee-min {
+	width: 100%;
+	height: 50px;
+	border-right: 1px solid #dfe3e9;
+	position: relative;
+	color: $color_2;
+	span {
+		position: absolute;
+		z-index: 1;
+		top: 16px;
+		font-size: 15px;
+		left: 8px;
+		transition: 0.2s;
+		font-family: $font-family_1;
+	}
+	input {
+		&:focus {
+			+ {
+				.focus {
+					top: 2px;
+					font-size: 13px;
+				}
+			}
+		}
+		&:valid {
+			+ {
+				.focus {
+					top: 8px;
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}
+.filtre-max {
+	width: 100%;
+	height: 50px;
+	border-left: 0px;
+	position: relative;
+	color: $color_2;
+	border-right: 1px solid #dfe3e9;
+	input {
+		&:focus {
+			+ {
+				.focus {
+					top: 2px;
+					font-size: 13px;
+				}
+			}
+		}
+		&:valid {
+			+ {
+				.focus {
+					top: 8px;
+					font-size: 13px;
+				}
+			}
+		}
+	}
+	span {
+		position: absolute;
+		z-index: 1;
+		top: 16px;
+		font-size: 15px;
+		left: 8px;
+		transition: 0.2s;
+		font-family: $font-family_1;
+		color: $color_2;
+	}
+}
+.filtreSalary {
+	i {
+		position: absolute;
+		z-index: 1;
+		right: 5px;
+		top: 25px;
+		cursor: pointer;
+	}
+}
+#register {
+	display: none;
+}
+#deleteWorker {
+	display: none;
+}
+#editWorker{
+	display: none;
+}

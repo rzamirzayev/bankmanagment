@@ -1,0 +1,133 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgb(122, 122, 179);
+}
+header #header {
+  height: 60px;
+  width: 1080px !important;
+  margin: 0 auto;
+  padding-right: 25px !important;
+}
+header #header .navbar > a {
+  color: white;
+  text-decoration: none;
+  margin: 0 7px;
+  font-size: 20px;
+  letter-spacing: -0.4;
+}
+header #header .button {
+  margin-top: 7px;
+}
+header #header .button button {
+  font-size: 20px;
+}
+
+main {
+  width: 1080px !important;
+  background-color: #f6f7fa;
+  margin: 0 auto;
+}
+
+#workerList .section-info #section-name {
+  margin-left: 20px;
+  margin-top: 12px;
+}
+#workerList .col-3 {
+  flex: 0 0 25%;
+  max-width: 22%;
+  border-radius: 10px;
+  margin: 5px 15px;
+  padding: 0 !important;
+  overflow: hidden;
+}
+#workerList .col-3:hover {
+  box-shadow: 0 0 20px rgba(33, 33, 33, 0.2);
+  border-radius: 10px;
+}
+#workerList .col-3 img {
+  width: 100%;
+  height: 170px;
+}
+#workerList .col-3 .workerType {
+  font-size: 20px;
+}
+#workerList .col-3 .info {
+  background-color: white;
+}
+
+.filtee-min {
+  width: 100%;
+  height: 50px;
+  border-right: 1px solid #dfe3e9;
+  position: relative;
+  color: #8d94ad;
+}
+.filtee-min span {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  font-size: 15px;
+  left: 8px;
+  transition: 0.2s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.filtee-min input:focus + .focus {
+  top: 2px;
+  font-size: 13px;
+}
+.filtee-min input:valid + .focus {
+  top: 8px;
+  font-size: 13px;
+}
+
+.filtre-max {
+  width: 100%;
+  height: 50px;
+  border-left: 0px;
+  position: relative;
+  color: #8d94ad;
+  border-right: 1px solid #dfe3e9;
+}
+.filtre-max input:focus + .focus {
+  top: 2px;
+  font-size: 13px;
+}
+.filtre-max input:valid + .focus {
+  top: 8px;
+  font-size: 13px;
+}
+.filtre-max span {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  font-size: 15px;
+  left: 8px;
+  transition: 0.2s;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #8d94ad;
+}
+
+.filtreSalary i {
+  position: absolute;
+  z-index: 1;
+  right: 5px;
+  top: 25px;
+  cursor: pointer;
+}
+
+#register {
+  display: none;
+}
+
+#deleteWorker {
+  display: none;
+}
+#editWorker{
+  display: none;
+}
